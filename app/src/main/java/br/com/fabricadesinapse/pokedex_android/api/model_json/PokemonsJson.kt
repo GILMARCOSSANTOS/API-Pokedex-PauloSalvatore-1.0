@@ -2,7 +2,7 @@ package br.com.fabricadesinapse.pokedex_android.api.model_json
 
 import br.com.fabricadesinapse.pokedex_android.api.property_setting.PokemonType
 
-data class PokemonsApiResult(
+data class PokemonsJson(
     val count: Int,
     val next: String?,
     val previous: String?,
@@ -14,7 +14,7 @@ data class PokemonResult(
     val url: String
 )
 
-data class PokemonApiResult(
+data class PokemonJson(
     val id: Int,
     val name: String,
     val types: List<PokemonTypeSlot>
