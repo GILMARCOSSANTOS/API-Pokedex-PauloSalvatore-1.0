@@ -1,12 +1,12 @@
-package br.com.fabricadesinapse.pokedex_android.api
+package br.com.fabricadesinapse.pokedex_android.api.api_url
 
-import br.com.fabricadesinapse.pokedex_android.api.model.PokemonApiResult
-import br.com.fabricadesinapse.pokedex_android.api.model.PokemonsApiResult
+import br.com.fabricadesinapse.pokedex_android.api.model_json.PokemonApiResult
+import br.com.fabricadesinapse.pokedex_android.api.model_json.PokemonsApiResult
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object PokemonRepository {
-    private val service: PokemonService
+object ApiBaseUrl {
+    private val service: ApiRelativeUrl
 
     init {
         val retrofit = Retrofit.Builder()
@@ -14,10 +14,10 @@ object PokemonRepository {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        service = retrofit.create(PokemonService::class.java)
+        service = retrofit.create(ApiRelativeUrl::class.java)
     }
 
-    fun listPokemons(limit: Int = 151): PokemonsApiResult? {
+    fun listPokemons(limit: Int = 5): PokemonsApiResult? {
         val call = service.listPokemons(limit)
 
         return call.execute().body()

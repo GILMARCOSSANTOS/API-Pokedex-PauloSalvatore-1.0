@@ -2,8 +2,8 @@ package br.com.fabricadesinapse.pokedex_android.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import br.com.fabricadesinapse.pokedex_android.api.PokemonRepository
-import br.com.fabricadesinapse.pokedex_android.domain.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.api_url.ApiBaseUrl
+import br.com.fabricadesinapse.pokedex_android.api.property_setting.Pokemon
 
 class PokemonViewModel : ViewModel() {
     var pokemons = MutableLiveData<List<Pokemon?>>()
@@ -15,7 +15,7 @@ class PokemonViewModel : ViewModel() {
     }
 
     private fun loadPokemons() {
-        val pokemonsApiResult = PokemonRepository.listPokemons()
+        val pokemonsApiResult = ApiBaseUrl.listPokemons()
 
         pokemonsApiResult?.results?.let {
             pokemons.postValue(it.map { pokemonResult ->
@@ -23,7 +23,7 @@ class PokemonViewModel : ViewModel() {
                     .replace("https://pokeapi.co/api/v2/pokemon/", "")
                     .replace("/", "").toInt()
 
-                val pokemonApiResult = PokemonRepository.getPokemon(number)
+                val pokemonApiResult = ApiBaseUrl.getPokemon(number)
 
                 pokemonApiResult?.let {
                     Pokemon(

@@ -1,6 +1,6 @@
-package br.com.fabricadesinapse.pokedex_android.api.model
+package br.com.fabricadesinapse.pokedex_android.api.model_json
 
-import br.com.fabricadesinapse.pokedex_android.domain.PokemonType
+import br.com.fabricadesinapse.pokedex_android.api.property_setting.PokemonType
 
 data class PokemonsApiResult(
     val count: Int,

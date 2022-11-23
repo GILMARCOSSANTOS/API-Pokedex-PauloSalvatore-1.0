@@ -1,4 +1,4 @@
-package br.com.fabricadesinapse.pokedex_android.domain
+package br.com.fabricadesinapse.pokedex_android.api.property_setting
 
 data class Pokemon(
     val number: Int,
