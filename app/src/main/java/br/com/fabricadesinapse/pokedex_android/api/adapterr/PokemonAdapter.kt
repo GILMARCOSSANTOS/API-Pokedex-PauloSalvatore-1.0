@@ -1,4 +1,4 @@
-package br.com.fabricadesinapse.pokedex_android.view
+package br.com.fabricadesinapse.pokedex_android.api.adapterr
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
-import br.com.fabricadesinapse.pokedex_android.domain.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon
 import com.bumptech.glide.Glide
 
 class PokemonAdapter(

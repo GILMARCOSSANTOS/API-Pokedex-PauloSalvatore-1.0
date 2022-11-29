@@ -7,7 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
-import br.com.fabricadesinapse.pokedex_android.domain.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.adapterr.PokemonAdapter
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon
 import br.com.fabricadesinapse.pokedex_android.viewmodel.PokemonViewModel
 import br.com.fabricadesinapse.pokedex_android.viewmodel.PokemonViewModelFactory
 

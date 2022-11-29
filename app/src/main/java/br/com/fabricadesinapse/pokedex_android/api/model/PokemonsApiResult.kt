@@ -1,7 +1,5 @@
 package br.com.fabricadesinapse.pokedex_android.api.model
 
-import br.com.fabricadesinapse.pokedex_android.domain.PokemonType
-
 data class PokemonsApiResult(
     val count: Int,
     val next: String?,

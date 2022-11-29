@@ -1,4 +1,4 @@
-package br.com.fabricadesinapse.pokedex_android.api
+package br.com.fabricadesinapse.pokedex_android.api.api_url
 
 import br.com.fabricadesinapse.pokedex_android.api.model.PokemonApiResult
 import br.com.fabricadesinapse.pokedex_android.api.model.PokemonsApiResult
@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface PokemonService {
+interface ApiUrlRelative {
     @GET("pokemon")
     fun listPokemons(@Query("limit") limit: Int): Call<PokemonsApiResult>
 
