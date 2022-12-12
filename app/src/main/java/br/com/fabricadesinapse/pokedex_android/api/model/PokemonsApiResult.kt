@@ -22,3 +22,4 @@ data class PokemonTypeSlot(
     val slot: Int,
     val type: PokemonType
 )
+

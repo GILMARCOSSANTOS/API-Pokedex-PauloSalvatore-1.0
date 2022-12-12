@@ -26,7 +26,7 @@ class PokemonAdapter(
                 Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
 
                 tvNumber.text = "Nº ${item.formattedNumber}"
-                tvName.text = item.formattedName
+               // tvName.text = item.formattedName
                 tvType1.text = item.types[0].name.capitalize()
 
                 if (item.types.size > 1) {

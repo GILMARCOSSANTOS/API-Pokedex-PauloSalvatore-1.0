@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.pokemons.observe(this, Observer {
-            loadRecyclerView(it)
+            loadRecyclerView(it as List<Pokemon?>)
         })
     }
 
