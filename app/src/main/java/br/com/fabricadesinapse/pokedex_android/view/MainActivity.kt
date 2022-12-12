@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
 import br.com.fabricadesinapse.pokedex_android.api.adapterr.PokemonAdapter
-import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemonxxx
 import br.com.fabricadesinapse.pokedex_android.viewmodel.PokemonViewModel
 import br.com.fabricadesinapse.pokedex_android.viewmodel.PokemonViewModelFactory
 
@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.pokemons.observe(this, Observer {
-            loadRecyclerView(it as List<Pokemon?>)
+            loadRecyclerView(it as List<Pokemonxxx?>)
         })
     }
 
-    private fun loadRecyclerView(pokemons: List<Pokemon?>) {
+    private fun loadRecyclerView(pokemons: List<Pokemonxxx?>) {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = PokemonAdapter(pokemons)
     }

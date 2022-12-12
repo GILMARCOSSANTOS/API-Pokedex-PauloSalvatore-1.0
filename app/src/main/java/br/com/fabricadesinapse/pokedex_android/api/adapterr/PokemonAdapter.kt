@@ -7,15 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
-import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemonxxx
 import com.bumptech.glide.Glide
 
 class PokemonAdapter(
-    private val items: List<Pokemon?>
+    private val items: List<Pokemonxxx?>
 ) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindView(item: Pokemon?) = with(itemView) {
+        fun bindView(item: Pokemonxxx?) = with(itemView) {
             val ivPokemon = findViewById<ImageView>(R.id.ivPokemon)
             val tvNumber = findViewById<TextView>(R.id.tvNumber)
             val tvName = findViewById<TextView>(R.id.tvName)
@@ -26,8 +26,8 @@ class PokemonAdapter(
                 Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
 
                 tvNumber.text = "Nº ${item.formattedNumber}"
-               // tvName.text = item.formattedName
-                tvType1.text = item.types[0].name.capitalize()
+                tvName.text = item.formattedName
+              //  tvType1.text = item.types[0].name.capitalize()
 
                 if (item.types.size > 1) {
                     tvType2.visibility = View.VISIBLE

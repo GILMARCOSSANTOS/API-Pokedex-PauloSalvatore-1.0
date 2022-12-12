@@ -3,10 +3,10 @@ package br.com.fabricadesinapse.pokedex_android.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.fabricadesinapse.pokedex_android.api.api_url.ApiUrlBase
-import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemonxxx
 
 class PokemonViewModel : ViewModel() {
-    var pokemons = MutableLiveData<List<Pokemon?>>()
+    var pokemons = MutableLiveData<List<Pokemonxxx?>>()
 
     init {
         Thread(Runnable {
@@ -26,7 +26,7 @@ class PokemonViewModel : ViewModel() {
                 val pokemonApiResult = ApiUrlBase.getPokemon(number)
 
                 pokemonApiResult?.let {
-                    Pokemon(
+                    Pokemonxxx(
                         pokemonApiResult.id,
                         pokemonApiResult.name,
                         pokemonApiResult.types.map { type ->
