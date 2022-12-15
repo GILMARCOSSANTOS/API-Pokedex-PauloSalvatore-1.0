@@ -1,42 +1,49 @@
 package br.com.fabricadesinapse.pokedex_android.api.adapterr
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fabricadesinapse.pokedex_android.R
-import br.com.fabricadesinapse.pokedex_android.api.model.Pokemonxxx
-import com.bumptech.glide.Glide
+import br.com.fabricadesinapse.pokedex_android.api.model.Pokemon001
+
 
 class PokemonAdapter(
-    private val items: List<Pokemonxxx?>
+
+    private val context: Context,
+    private val items: List<Pokemon001?>
 ) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindView(item: Pokemonxxx?) = with(itemView) {
-            val ivPokemon = findViewById<ImageView>(R.id.ivPokemon)
-            val tvNumber = findViewById<TextView>(R.id.tvNumber)
-            val tvName = findViewById<TextView>(R.id.tvName)
-            val tvType1 = findViewById<TextView>(R.id.tvType1)
-            val tvType2 = findViewById<TextView>(R.id.tvType2)
 
-            item?.let {
-                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+        var namePokemon: TextView? = null
 
-                tvNumber.text = "Nº ${item.formattedNumber}"
-                tvName.text = item.formattedName
-              //  tvType1.text = item.types[0].name.capitalize()
+        init {
+            namePokemon = itemView.findViewById(R.id.txtVw_namePokemon_actvMain_id)
 
-                if (item.types.size > 1) {
-                    tvType2.visibility = View.VISIBLE
-                    tvType2.text = item.types[1].name.capitalize()
-                } else {
-                    tvType2.visibility = View.GONE
-                }
-            }
         }
+
+//        fun bindView(item: Pokemonxxx?) = with(itemView) {
+//            val tvName = findViewById<TextView>(R.id.tvName)
+//            val ivPokemon = findViewById<ImageView>(R.id.ivPokemon)
+//            val tvNumber = findViewById<TextView>(R.id.tvNumber)
+//            val tvType1 = findViewById<TextView>(R.id.tvType1)
+//            val tvType2 = findViewById<TextView>(R.id.tvType2)
+//            item?.let {
+//                Glide.with(itemView.context).load(it.imageUrl).into(ivPokemon)
+//                tvNumber.text = "Nº ${item.formattedNumber}"
+//                tvName.text = item.formattedName
+//              tvType1.text = item.types[0].name.capitalize()
+//                if (item.types.size > 1) {
+//                    tvType2.visibility = View.VISIBLE
+//            tvType2.text = item.types[1].name.capitalize()
+//                } else {
+//                    tvType2.visibility = View.GONE
+//                }
+//            }
+//        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,9 +55,13 @@ class PokemonAdapter(
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
+        //val item = items[position]
+       // holder.bindView(item)
 
-        holder.bindView(item)
+        val item = items.get(position)
+        //holder.namePokemon = item.results.listIterator(position)
+
+
     }
 
 
